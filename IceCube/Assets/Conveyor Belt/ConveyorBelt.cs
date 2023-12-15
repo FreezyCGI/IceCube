@@ -13,8 +13,6 @@ public class ConveyorBelt : MonoBehaviour
     {
         IceCube iceCube = collision.transform.GetComponent<IceCube>();
 
-        Debug.Log(collision.transform.name);
-
         if (iceCube)
         {
             iceCube.transform.position += transform.right * Time.deltaTime * transportSpeed;
