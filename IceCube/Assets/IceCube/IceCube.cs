@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class IceCube : MonoBehaviour
 {
+    [SerializeField]
+    float movementSpeed = 1;
 
     public Rigidbody2D Rigidbody;
 
@@ -17,6 +19,6 @@ public class IceCube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Rigidbody.velocity = new Vector2(movementSpeed, Rigidbody.velocity.y);
     }
 }

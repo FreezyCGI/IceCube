@@ -14,6 +14,9 @@ public class Trampoline : MonoBehaviour
     [SerializeField]
     TriggerArea TriggerArea;
 
+    [SerializeField]
+    Collider2D FailCollider;
+
     IceCube IceCube;
 
     bool Completed = false;
@@ -41,6 +44,7 @@ public class Trampoline : MonoBehaviour
         if (iceCube && !Completed)
         {
             Completed = true;
+            FailCollider.enabled = false;
             IceCube.Rigidbody.velocity = new Vector2(IceCube.Rigidbody.velocity.x, 0);
             IceCube.transform.position = transform.position;
             IceCube.Rigidbody.AddForce(JumpForceWrong, ForceMode2D.Impulse);
