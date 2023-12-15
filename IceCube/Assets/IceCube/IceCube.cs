@@ -8,6 +8,9 @@ public class IceCube : MonoBehaviour
     [SerializeField]
     float movementSpeed = 1;
 
+    [SerializeField]
+    GameObject SplittedIceCube;
+
     public Rigidbody2D Rigidbody;
 
     // Start is called before the first frame update
@@ -20,5 +23,10 @@ public class IceCube : MonoBehaviour
     void Update()
     {
         Rigidbody.velocity = new Vector2(movementSpeed, Rigidbody.velocity.y);
+    }
+    private void OnDestroy()
+    {
+        SplittedIceCube.SetActive(true);
+        SplittedIceCube.transform.position = transform.position + transform.localScale / 2;
     }
 }
