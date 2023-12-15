@@ -2,19 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Trampoline : MonoBehaviour
 {
+    [SerializeField]
+    Vector2 JumpForceRight = Vector2.up;
 
     [SerializeField]
-    Vector2 JumpForce = Vector2.up;
+    Vector2 JumpForceWrong = Vector2.up;
+
+    [SerializeField]
+    TriggerArea TriggerArea;
+
+    IceCube IceCube;
+
+    bool Completed = false;
+
+    private void Start()
+    {
+        IceCube = FindFirstObjectByType<IceCube>();
+    }
+
+    private void Update()
+    {
+        if (TriggerArea.IsInArea && Input.GetKeyDown(KeyCode.W) && !Completed)
+        {
+            Completed = true;
+            IceCube.Rigidbody.velocity = new Vector2(IceCube.Rigidbody.velocity.x, 0);
+            IceCube.transform.position = transform.position;
+            IceCube.Rigidbody.AddForce(JumpForceRight, ForceMode2D.Impulse);
+        }
+    }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         IceCube iceCube = collision.transform.GetComponent<IceCube>();
 
-        if (iceCube)
+        if (iceCube && !Completed)
         {
-            iceCube.GetComponent<Rigidbody2D>().AddForce(JumpForce, ForceMode2D.Impulse);
+            Completed = true;
+            IceCube.Rigidbody.velocity = new Vector2(IceCube.Rigidbody.velocity.x, 0);
+            IceCube.transform.position = transform.position;
+            IceCube.Rigidbody.AddForce(JumpForceWrong, ForceMode2D.Impulse);
         }
     }
 }

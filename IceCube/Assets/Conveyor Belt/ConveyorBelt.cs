@@ -15,7 +15,7 @@ public class ConveyorBelt : MonoBehaviour
 
         if (iceCube)
         {
-            iceCube.transform.position += transform.right * Time.deltaTime * transportSpeed;
+            iceCube.GetComponent<Rigidbody2D>().velocity = transform.right * transportSpeed;
         }
     }
 }
