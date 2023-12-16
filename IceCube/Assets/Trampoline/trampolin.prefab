@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 1620275712545304935}
   - component: {fileID: 1038462748634288588}
   - component: {fileID: 1380338085730018599}
-  - component: {fileID: 756548766489151661}
+  - component: {fileID: 7306833162812366193}
   m_Layer: 0
   m_Name: trampolin
   m_TagString: Untagged
@@ -243,7 +243,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &756548766489151661
+--- !u!114 &7306833162812366193
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -252,12 +252,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3208202601446311178}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e94e87210c9ee049b656b06fd4c2b6f, type: 3}
+  m_Script: {fileID: 11500000, guid: d189a4b31f119e64f8338c9b566ebbef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KeyCode: 32
   cubeParent: {fileID: 347531384470914489}
   TxtKey: {fileID: 8208677804082175239}
+  MaxStep: 1
 --- !u!1 &3215665705324312385
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,10 +351,10 @@ MonoBehaviour:
   TriggerAction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 756548766489151661}
-        m_TargetAssemblyTypeName: Trampoline, Assembly-CSharp
+      - m_Target: {fileID: 7306833162812366193}
+        m_TargetAssemblyTypeName: Crane, Assembly-CSharp
         m_MethodName: OnCubeSuccess
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -366,8 +366,8 @@ MonoBehaviour:
   InAreaAction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 756548766489151661}
-        m_TargetAssemblyTypeName: Trampoline, Assembly-CSharp
+      - m_Target: {fileID: 7306833162812366193}
+        m_TargetAssemblyTypeName: Crane, Assembly-CSharp
         m_MethodName: OnCubeInArea
         m_Mode: 3
         m_Arguments:
@@ -381,8 +381,8 @@ MonoBehaviour:
   DeathAction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 756548766489151661}
-        m_TargetAssemblyTypeName: Trampoline, Assembly-CSharp
+      - m_Target: {fileID: 7306833162812366193}
+        m_TargetAssemblyTypeName: Crane, Assembly-CSharp
         m_MethodName: OnCubeFailed
         m_Mode: 3
         m_Arguments:

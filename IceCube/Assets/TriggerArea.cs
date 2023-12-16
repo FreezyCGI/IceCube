@@ -65,6 +65,6 @@ public class TriggerArea : MonoBehaviour
 
     public bool InAreaAndRightClicked()
     {
-        return CubeInArea && Input.GetKeyDown(KeyCode);
+        return CubeInArea && Input.GetKey(KeyCode);
     }
 }
