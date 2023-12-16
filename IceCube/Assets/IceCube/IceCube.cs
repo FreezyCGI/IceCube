@@ -28,7 +28,7 @@ public class IceCube : MonoBehaviour
     public void OnFail()
     {
         SplittedIceCube.SetActive(true);
-        SplittedIceCube.transform.position = transform.position + transform.localScale / 2;
+        SplittedIceCube.transform.position = transform.position + new Vector3(-transform.localScale.x / 2, transform.localScale.y / 2, 0);
         gameObject.SetActive(false);
     }
 }
