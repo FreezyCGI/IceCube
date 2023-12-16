@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 1038462748634288588}
   - component: {fileID: 1380338085730018599}
   - component: {fileID: 756548766489151661}
+  - component: {fileID: -2106941580345100708}
   m_Layer: 0
   m_Name: trampolin
   m_TagString: Untagged
@@ -255,10 +256,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FirstKey: 32
-  First: 0
+  TxtKey: {fileID: 8208677804082175239}
   Next: {fileID: 0}
   CubeParent: {fileID: 347531384470914489}
-  TxtKey: {fileID: 8208677804082175239}
+--- !u!114 &-2106941580345100708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3208202601446311178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library: []
+  m_SpriteLibraryAsset: {fileID: 0}
 --- !u!1 &5025263671033849473
 GameObject:
   m_ObjectHideFlags: 0
