@@ -1757,6 +1757,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1112813018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1112813020}
+  - component: {fileID: 1112813019}
+  m_Layer: 0
+  m_Name: TriggerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1112813019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112813018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f92ad96f6135c94781d7313ccf76e85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1112813020
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112813018}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 76.916824, y: 237.88666, z: -0.260368}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1211592331
 GameObject:
   m_ObjectHideFlags: 0
@@ -2688,6 +2732,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SplittedIceCube: {fileID: 880721076}
+  CubeHalfDamaged: {fileID: 21300000, guid: 334454edc65ab5a499363e2be0060838, type: 3}
+  CubeFullyDamaged: {fileID: 21300000, guid: 2f54a58c5b3888a43953e0b11bd50dc7, type: 3}
   Rigidbody: {fileID: 1634883755}
 --- !u!50 &1634883755
 Rigidbody2D:
@@ -4170,6 +4216,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 1112813020}
   - {fileID: 1593691446}
   - {fileID: 1823815143}
   - {fileID: 1804376014}
