@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 1380338085730018599}
   - component: {fileID: 756548766489151661}
   m_Layer: 0
-  m_Name: trampolineStart
+  m_Name: trampolin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

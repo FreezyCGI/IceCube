@@ -11,6 +11,9 @@ public class SequenzChanger : MonoBehaviour
     [SerializeField]
     TriggerableBase FirstBuilding;
 
+    [SerializeField]
+    GameObject StartSequenzPanel;
+
     public void ChangeText(string text)
     {
         sequenzText.SetText(text);

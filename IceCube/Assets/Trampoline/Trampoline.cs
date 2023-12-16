@@ -7,9 +7,6 @@ using UnityEngine.UI;
 public class Trampoline : TriggerableBase
 {
     [SerializeField]
-    bool First = false;
-
-    [SerializeField]
     TriggerableBase Next;
 
     [SerializeField]
@@ -28,11 +25,6 @@ public class Trampoline : TriggerableBase
     {
         IceCube = FindFirstObjectByType<IceCube>();
         Animator = GetComponent<Animator>();
-
-        if (First)
-        {
-            OnStart(true);
-        }
     }
 
     private void Update()

@@ -12,11 +12,6 @@ public class MinigameManager : MonoBehaviour
     [SerializeField]
     GameObject LosePanel;
 
-    private void Start()
-    {
-        
-    }
-
     public void ShowWon()
     {
         WinPanel.SetActive(true);
