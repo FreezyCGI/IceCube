@@ -104,6 +104,10 @@ public class Trampoline : TriggerableBase
 
     public void OnStartFailAnimationNextObject()
     {
+        if(scriptDone)
+        {
+            return;
+        }
         Debug.Log($"{gameObject.name} OnStartFailAnimationNextObject");
         ContinueToNextObject(false);
     }
