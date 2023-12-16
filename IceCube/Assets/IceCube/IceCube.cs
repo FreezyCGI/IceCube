@@ -6,9 +6,6 @@ using UnityEngine;
 public class IceCube : MonoBehaviour
 {
     [SerializeField]
-    float movementSpeed = 1;
-
-    [SerializeField]
     GameObject SplittedIceCube;
 
     public Rigidbody2D Rigidbody;
@@ -17,12 +14,6 @@ public class IceCube : MonoBehaviour
     void Start()
     {
         Rigidbody = GetComponent<Rigidbody2D>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void OnFail()
