@@ -23,6 +23,22 @@ public class TriggerManager : MonoBehaviour
         {
             CheckKey(KeyCode.Space);
         }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            CheckKey(KeyCode.D);
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            CheckKey(KeyCode.A);
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            CheckKey(KeyCode.W);
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            CheckKey(KeyCode.S);
+        }
     }
 
     void CheckKey(KeyCode keyCode)

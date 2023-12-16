@@ -13,6 +13,9 @@ public class TriggerArea : MonoBehaviour
     UnityEvent InAreaAction;
 
     [SerializeField]
+    UnityEvent OutAreaAction;
+
+    [SerializeField]
     UnityEvent DeathAction;
 
     [SerializeField]
@@ -60,6 +63,7 @@ public class TriggerArea : MonoBehaviour
         {
             CubeInArea = false;
             DeathAction?.Invoke();
+            OutAreaAction?.Invoke();
         }
     }
 

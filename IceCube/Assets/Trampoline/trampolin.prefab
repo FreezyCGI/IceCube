@@ -268,7 +268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6907730925689673599}
   - component: {fileID: 3679332236480650483}
-  - component: {fileID: 6988608899382831307}
+  - component: {fileID: 8953342812982119318}
   m_Layer: 0
   m_Name: Trigger0
   m_TagString: Untagged
@@ -336,7 +336,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7933669, y: 1.641825}
   m_EdgeRadius: 0
---- !u!114 &6988608899382831307
+--- !u!114 &8953342812982119318
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -345,14 +345,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3215665705324312385}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c014ed31d7a957c4399270178a0dbd53, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e9ca6762bce56e44817cc0f724195ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   TriggerAction:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7306833162812366193}
-        m_TargetAssemblyTypeName: Crane, Assembly-CSharp
+        m_TargetAssemblyTypeName: Triggerable, Assembly-CSharp
         m_MethodName: OnCubeSuccess
         m_Mode: 3
         m_Arguments:
@@ -367,7 +367,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7306833162812366193}
-        m_TargetAssemblyTypeName: Crane, Assembly-CSharp
+        m_TargetAssemblyTypeName: Triggerable, Assembly-CSharp
         m_MethodName: OnCubeInArea
         m_Mode: 3
         m_Arguments:
@@ -382,7 +382,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7306833162812366193}
-        m_TargetAssemblyTypeName: Crane, Assembly-CSharp
+        m_TargetAssemblyTypeName: Triggerable, Assembly-CSharp
         m_MethodName: OnCubeFailed
         m_Mode: 3
         m_Arguments:

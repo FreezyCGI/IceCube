@@ -45,6 +45,12 @@ public class Triggerable : MonoBehaviour
 
         TxtKey.color = Color.green;
     }
+    public void OnCubeOutOfArea(int i)
+    {
+        if (i != Step || Step >= MaxStep) return;
+
+        TxtKey.color = Color.white;
+    }
 
     public void OnCubeFailed(int i)
     {
