@@ -6,7 +6,6 @@ using UnityEngine.Events;
 
 public class TriggerArea : MonoBehaviour
 {
-
     [SerializeField]
     UnityEvent TriggerAction;
 
@@ -21,7 +20,7 @@ public class TriggerArea : MonoBehaviour
 
     private void Update()
     {
-        if(timerStarted)
+        if(timerStarted && DeathAction != null)
         {
             timer += Time.deltaTime;
         }
@@ -29,7 +28,7 @@ public class TriggerArea : MonoBehaviour
         if(timer >= deathTimer)
         {
             timerStarted = false;
-            DeathAction.Invoke();
+            DeathAction?.Invoke();
         }
     }
 

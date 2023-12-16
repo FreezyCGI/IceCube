@@ -7,9 +7,6 @@ public class Trampoline : TriggerableBase
     KeyCode KeyCode;
 
     [SerializeField]
-    TriggerableBase NextTriggerable;
-
-    [SerializeField]
     GameObject cubeParent;
 
     [SerializeField]
