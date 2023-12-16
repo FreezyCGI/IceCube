@@ -22,11 +22,13 @@ public class IceCube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Rigidbody.velocity = new Vector2(movementSpeed, Rigidbody.velocity.y);
+        
     }
-    private void OnDestroy()
+
+    public void OnFail()
     {
         SplittedIceCube.SetActive(true);
         SplittedIceCube.transform.position = transform.position + transform.localScale / 2;
+        gameObject.SetActive(false);
     }
 }

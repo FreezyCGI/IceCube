@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 
@@ -39,5 +40,10 @@ public class Trampoline : TriggerableBase
         IceCube.transform.localPosition = Vector3.zero;
         IceCube.Rigidbody.isKinematic = true;
         Animator.SetTrigger("fail");
+    }
+
+    public void OnFail()
+    {
+        IceCube.OnFail();
     }
 }
