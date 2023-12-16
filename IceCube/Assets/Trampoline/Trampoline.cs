@@ -28,6 +28,7 @@ public class Trampoline : TriggerableBase
     {
         IceCube.Rigidbody.velocity = new Vector2(0, 0);
         IceCube.transform.SetParent(CubeParent.transform);
+        IceCube.transform.localPosition = Vector3.zero;
         IceCube.Rigidbody.isKinematic = true;
         Animator.SetTrigger("jump");
     }
@@ -35,6 +36,7 @@ public class Trampoline : TriggerableBase
     {
         IceCube.Rigidbody.velocity = new Vector2(0, 0);
         IceCube.transform.SetParent(CubeParent.transform);
+        IceCube.transform.localPosition = Vector3.zero;
         IceCube.Rigidbody.isKinematic = true;
         Animator.SetTrigger("fail");
     }
