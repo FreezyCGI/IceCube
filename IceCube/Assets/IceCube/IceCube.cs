@@ -22,7 +22,7 @@ public class IceCube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Rigidbody.velocity = new Vector2(movementSpeed, Rigidbody.velocity.y);
+        //Rigidbody.velocity = new Vector2(movementSpeed, Rigidbody.velocity.y);
     }
     private void OnDestroy()
     {

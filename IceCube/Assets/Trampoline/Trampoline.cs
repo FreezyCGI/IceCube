@@ -11,23 +11,31 @@ public class Trampoline : TriggerableBase
     [SerializeField]
     Vector2 JumpForceWrong = Vector2.up;
 
+    [SerializeField]
+    GameObject CubeParent;
+
+    Animator Animator;
+
     IceCube IceCube;
 
     private void Start()
     {
         IceCube = FindFirstObjectByType<IceCube>();
+        Animator = GetComponent<Animator>();
     }
 
     public override void OnTriggerSuccess()
     {
-        IceCube.Rigidbody.velocity = new Vector2(IceCube.Rigidbody.velocity.x, 0);
-        IceCube.transform.position = transform.position;
-        IceCube.Rigidbody.AddForce(JumpForceRight, ForceMode2D.Impulse);
+        IceCube.Rigidbody.velocity = new Vector2(0, 0);
+        IceCube.transform.SetParent(CubeParent.transform);
+        IceCube.Rigidbody.isKinematic = true;
+        Animator.SetTrigger("jump");
     }
     public override void OnTriggerFailed()
     {
-        IceCube.Rigidbody.velocity = new Vector2(IceCube.Rigidbody.velocity.x, 0);
-        IceCube.transform.position = transform.position;
-        IceCube.Rigidbody.AddForce(JumpForceWrong, ForceMode2D.Impulse);
+        IceCube.Rigidbody.velocity = new Vector2(0, 0);
+        IceCube.transform.SetParent(CubeParent.transform);
+        IceCube.Rigidbody.isKinematic = true;
+        Animator.SetTrigger("fail");
     }
 }
