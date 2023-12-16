@@ -1,45 +1,106 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
+using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class Trampoline : TriggerableBase
 {
     [SerializeField]
-    Vector2 JumpForceRight = Vector2.up;
+    bool First = false;
 
     [SerializeField]
-    Vector2 JumpForceWrong = Vector2.up;
+    TriggerableBase Next;
 
     [SerializeField]
     GameObject CubeParent;
 
-    Animator Animator;
+    bool keyPressAllowed = false;
+    bool CanContinue = false;
+    bool Success = false;
+
+    KeyCode? KeyCode = null;
 
     IceCube IceCube;
-
+    Animator Animator;
     private void Start()
     {
         IceCube = FindFirstObjectByType<IceCube>();
         Animator = GetComponent<Animator>();
+
+        if (First)
+        {
+            OnStart(true);
+        }
     }
 
-    public override void OnTriggerSuccess()
+    private void Update()
     {
-        IceCube.Rigidbody.velocity = new Vector2(0, 0);
-        IceCube.transform.SetParent(CubeParent.transform);
-        IceCube.transform.localPosition = Vector3.zero;
-        IceCube.Rigidbody.isKinematic = true;
-        Animator.SetTrigger("jump");
+        if (KeyCode == null || keyPressAllowed == false)
+        {
+            return;
+        }
+
+        if (Input.GetKeyDown((KeyCode)KeyCode))
+        {
+            Success = true;
+        }
+
+        if (Success && CanContinue)
+        {
+            ContinueToNextObject(true);
+        }
     }
-    public override void OnTriggerFailed()
+    public override void OnStart(bool success)
     {
-        IceCube.Rigidbody.velocity = new Vector2(0, 0);
+        Debug.Log("OnStart");
         IceCube.transform.SetParent(CubeParent.transform);
         IceCube.transform.localPosition = Vector3.zero;
-        IceCube.Rigidbody.isKinematic = true;
-        Animator.SetTrigger("fail");
+
+        if(success)
+        {
+            Animator.SetTrigger("jump");
+            TxtKey.color = Color.green;
+        }
+        else
+        {
+            Animator.SetTrigger("fail");
+            TxtKey.color = Color.red;
+        }    
+    }
+
+    public void OnAllowKeyPress(KeyCode keyCode)
+    {
+        //Debug.Log("OnAllowKeyPress");
+        //TxtKey.color = Color.green;
+        //keyPressAllowed = true;
+        //KeyCode = Next.FirstKey;
+    }
+
+    public void OnAllowKeyPressLast()
+    {
+        Debug.Log("OnAllowKeyPressLast");
+        Next.TxtKey.color = Color.green;
+        keyPressAllowed = true;
+        KeyCode = Next.FirstKey;
+    }
+
+    public override void OnCanContinueToNextObject()
+    {
+        Debug.Log("OnCanContinueToNextObject");
+        CanContinue = true;
+    }
+
+    public override void ContinueToNextObject(bool success)
+    {
+        Debug.Log("ContinueToNextObject");
+        Next.OnStart(success);
+    }
+
+    public void OnStartFailAnimationNextObject()
+    {
+        Debug.Log("OnStartFailAnimationNextObject");
+        ContinueToNextObject(false);
     }
 
     public void OnFail()
