@@ -716,6 +716,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 756548766489151661, guid: 98577dea3cec4ba48bb7470ab0b6ad37, type: 3}
+      propertyPath: Next
+      value: 
+      objectReference: {fileID: 932933737}
     - target: {fileID: 1620275712545304935, guid: 98577dea3cec4ba48bb7470ab0b6ad37, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16
@@ -964,8 +968,8 @@ Transform:
   m_GameObject: {fileID: 891854416}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 34.8502, y: -3.7, z: 1}
-  m_LocalScale: {x: 0.96464, y: 0.868176, z: 0.96464}
+  m_LocalPosition: {x: 18, y: 1.39, z: 1}
+  m_LocalScale: {x: 0.6287018, y: 0.56583166, z: 0.6287018}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -1016,12 +1020,23 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 91.23614, y: 24.482655}
+  m_Size: {x: 116.265015, y: 20.743435}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &932933737 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8974568124189969449, guid: 99c01ba778cc7bd48b40a5a8fd345d98, type: 3}
+  m_PrefabInstance: {fileID: 8196382641473137889}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c468f09a2688e0149bb9cf60509204a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &986416274
 GameObject:
   m_ObjectHideFlags: 0
