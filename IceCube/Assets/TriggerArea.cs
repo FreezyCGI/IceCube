@@ -16,7 +16,7 @@ public class TriggerArea : MonoBehaviour
     KeyCode KeyCode;
 
     [SerializeField]
-    Trampoline Trampoline;
+    private TriggerableBase Triggerable;
 
     private void Update()
     {
@@ -27,7 +27,7 @@ public class TriggerArea : MonoBehaviour
         {
             triggered = true;
             success = true;
-            Trampoline.OnTriggerSuccess();
+            Triggerable.OnTriggerSuccess();
         }
     }
 
@@ -59,7 +59,7 @@ public class TriggerArea : MonoBehaviour
             if(!success)
             {
                 TxtKey.color = Color.red;
-                Trampoline.OnTriggerFailed();
+                Triggerable.OnTriggerFailed();
             }
         }
     }

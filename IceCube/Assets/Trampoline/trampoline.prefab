@@ -65,7 +65,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.4681337}
+  m_Offset: {x: 0, y: 0.52371085}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -76,7 +76,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.313287, y: 0.33317125}
+  m_Size: {x: 1.313287, y: 0.44432563}
   m_EdgeRadius: 0
 --- !u!114 &7132463087025011820
 MonoBehaviour:
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtKey: {fileID: 8208677804082175239}
   KeyCode: 32
-  Trampoline: {fileID: 6438706503196904630}
+  Triggerable: {fileID: 6438706503196904630}
 --- !u!1 &2672568528511934006
 GameObject:
   m_ObjectHideFlags: 0
