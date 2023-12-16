@@ -1,26 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Trampoline : TriggerableBase
 {
     [SerializeField]
-    TriggerableBase Next;
+    KeyCode KeyCode;
 
     [SerializeField]
-    GameObject CubeParent;
+    TriggerableBase NextTriggerable;
 
-    bool keyPressAllowed = false;
-    bool CanContinue = false;
-    bool Success = false;
-    bool scriptDone = false;
+    [SerializeField]
+    GameObject cubeParent;
 
-    KeyCode? KeyCode = null;
+    [SerializeField]
+    Text TxtKey;
 
-    IceCube IceCube;
     Animator Animator;
+    IceCube IceCube;
+
+    bool CubeInArea = false;
+    bool scriptFinished = false;
+
     private void Start()
     {
         IceCube = FindFirstObjectByType<IceCube>();
@@ -29,83 +29,30 @@ public class Trampoline : TriggerableBase
 
     private void Update()
     {
-        if (KeyCode == null || keyPressAllowed == false || scriptDone)
-        {
-            return;
-        }
+        if (scriptFinished) return;
 
-        if (Input.GetKeyDown((KeyCode)KeyCode))
+        if (CubeInArea && Input.GetKeyDown(KeyCode))
         {
-            Success = true;
-        }
-
-        if (Success && CanContinue)
-        {
-            ContinueToNextObject(true);
-        }
-    }
-    public override void OnStart(bool success)
-    {
-        Debug.Log($"{gameObject.name} OnStart");
-        IceCube.transform.SetParent(CubeParent.transform);
-        IceCube.transform.localPosition = Vector3.zero;
-
-        if(success)
-        {
+            IceCube.transform.SetParent(cubeParent.transform, true);
             Animator.SetTrigger("jump");
-            TxtKey.color = Color.green;
+            scriptFinished = true;
         }
-        else
-        {
-            Animator.SetTrigger("fail");
-            TxtKey.color = Color.red;
-        }    
     }
 
-    public void OnAllowKeyPress(KeyCode keyCode)
+
+    public void Detected(int i)
     {
-        //Debug.Log("OnAllowKeyPress");
-        //TxtKey.color = Color.green;
-        //keyPressAllowed = true;
-        //KeyCode = Next.FirstKey;
+        CubeInArea = true;
+        TxtKey.color = Color.green;
     }
 
-    public void OnAllowKeyPressLast()
+    public void Die(int i)
     {
-        Debug.Log($"{gameObject.name} OnAllowKeyPressLast");
-        if(Next && Next.TxtKey)
-            Next.TxtKey.color = Color.green;
-        keyPressAllowed = true;
-        KeyCode = Next.FirstKey;
-    }
+        if (scriptFinished) return;
 
-    public override void OnCanContinueToNextObject()
-    {
-        Debug.Log($"{gameObject.name} OnCanContinueToNextObject");
-        CanContinue = true;
-    }
-
-    public override void ContinueToNextObject(bool success)
-    {
-        Debug.Log($"{gameObject.name} ContinueToNextObject");
-        if(Next)
-            Next.OnStart(success);
-
-        scriptDone = true;
-    }
-
-    public void OnStartFailAnimationNextObject()
-    {
-        if(scriptDone)
-        {
-            return;
-        }
-        Debug.Log($"{gameObject.name} OnStartFailAnimationNextObject");
-        ContinueToNextObject(false);
-    }
-
-    public void OnFail()
-    {
-        IceCube.OnFail();
+        TxtKey.color = Color.red;
+        IceCube.transform.SetParent(cubeParent.transform, true);
+        Animator.SetTrigger("fail");
+        scriptFinished = true;
     }
 }

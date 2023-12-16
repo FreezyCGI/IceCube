@@ -22,6 +22,6 @@ public class SequenzChanger : MonoBehaviour
     public void StartMinigame()
     {
         ChangeText("GO!");
-        FirstBuilding.OnStart(true);
+        //FirstBuilding.OnStart();
     }
 }

@@ -4,11 +4,19 @@ using UnityEngine.UI;
 
 public abstract class TriggerableBase : MonoBehaviour
 {
-    public abstract void OnStart(bool success);
-    public abstract void OnCanContinueToNextObject();
+    //[SerializeField]
+    //GameObject IceCubeParent;
 
-    public abstract void ContinueToNextObject(bool success);
+    //IceCube IceCube;
 
-    public KeyCode FirstKey;
-    public Text TxtKey;
+    //public void Start()
+    //{
+    //    IceCube = FindFirstObjectByType<IceCube>();
+    //}
+
+    //public virtual void OnStart()
+    //{
+    //    IceCube.transform.SetParent(IceCubeParent.transform);
+    //    IceCube.transform.localPosition = Vector3.zero;
+    //}
 }
