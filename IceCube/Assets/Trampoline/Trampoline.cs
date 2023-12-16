@@ -80,7 +80,8 @@ public class Trampoline : TriggerableBase
     public void OnAllowKeyPressLast()
     {
         Debug.Log("OnAllowKeyPressLast");
-        Next.TxtKey.color = Color.green;
+        if(Next)
+            Next.TxtKey.color = Color.green;
         keyPressAllowed = true;
         KeyCode = Next.FirstKey;
     }
@@ -94,7 +95,8 @@ public class Trampoline : TriggerableBase
     public override void ContinueToNextObject(bool success)
     {
         Debug.Log("ContinueToNextObject");
-        Next.OnStart(success);
+        if(Next)
+            Next.OnStart(success);
     }
 
     public void OnStartFailAnimationNextObject()

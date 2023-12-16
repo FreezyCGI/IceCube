@@ -30,5 +30,6 @@ public class IceCube : MonoBehaviour
         SplittedIceCube.SetActive(true);
         SplittedIceCube.transform.position = transform.position + new Vector3(-transform.localScale.x / 2, transform.localScale.y / 2, 0);
         gameObject.SetActive(false);
+        FindFirstObjectByType<MinigameManager>().ShowLost();
     }
 }
