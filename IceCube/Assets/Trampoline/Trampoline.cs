@@ -18,6 +18,7 @@ public class Trampoline : TriggerableBase
     bool keyPressAllowed = false;
     bool CanContinue = false;
     bool Success = false;
+    bool scriptDone = false;
 
     KeyCode? KeyCode = null;
 
@@ -36,7 +37,7 @@ public class Trampoline : TriggerableBase
 
     private void Update()
     {
-        if (KeyCode == null || keyPressAllowed == false)
+        if (KeyCode == null || keyPressAllowed == false || scriptDone)
         {
             return;
         }
@@ -53,7 +54,7 @@ public class Trampoline : TriggerableBase
     }
     public override void OnStart(bool success)
     {
-        Debug.Log("OnStart");
+        Debug.Log($"{gameObject.name} OnStart");
         IceCube.transform.SetParent(CubeParent.transform);
         IceCube.transform.localPosition = Vector3.zero;
 
@@ -79,7 +80,7 @@ public class Trampoline : TriggerableBase
 
     public void OnAllowKeyPressLast()
     {
-        Debug.Log("OnAllowKeyPressLast");
+        Debug.Log($"{gameObject.name} OnAllowKeyPressLast");
         if(Next && Next.TxtKey)
             Next.TxtKey.color = Color.green;
         keyPressAllowed = true;
@@ -88,20 +89,22 @@ public class Trampoline : TriggerableBase
 
     public override void OnCanContinueToNextObject()
     {
-        Debug.Log("OnCanContinueToNextObject");
+        Debug.Log($"{gameObject.name} OnCanContinueToNextObject");
         CanContinue = true;
     }
 
     public override void ContinueToNextObject(bool success)
     {
-        Debug.Log("ContinueToNextObject");
+        Debug.Log($"{gameObject.name} ContinueToNextObject");
         if(Next)
             Next.OnStart(success);
+
+        scriptDone = true;
     }
 
     public void OnStartFailAnimationNextObject()
     {
-        Debug.Log("OnStartFailAnimationNextObject");
+        Debug.Log($"{gameObject.name} OnStartFailAnimationNextObject");
         ContinueToNextObject(false);
     }
 
