@@ -15,7 +15,6 @@ public class Trampoline : TriggerableBase
     Animator Animator;
     IceCube IceCube;
 
-    bool CubeInArea = false;
     bool scriptFinished = false;
 
     private void Start()
@@ -26,24 +25,26 @@ public class Trampoline : TriggerableBase
 
     private void Update()
     {
-        if (scriptFinished) return;
 
-        if (CubeInArea && Input.GetKeyDown(KeyCode))
-        {
-            IceCube.transform.SetParent(cubeParent.transform, true);
-            Animator.SetTrigger("jump");
-            scriptFinished = true;
-        }
     }
 
-
-    public void Detected(int i)
+    public void OnCubeSuccess()
     {
-        CubeInArea = true;
+        if (scriptFinished) return;
+
+        IceCube.transform.SetParent(cubeParent.transform, true);
+        Animator.SetTrigger("jump");
+        scriptFinished = true;
+    }
+
+    public void OnCubeInArea(int i)
+    {
+        if (scriptFinished) return;
+
         TxtKey.color = Color.green;
     }
 
-    public void Die(int i)
+    public void OnCubeFailed(int i)
     {
         if (scriptFinished) return;
 

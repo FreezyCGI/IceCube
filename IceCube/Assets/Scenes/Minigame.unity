@@ -1440,6 +1440,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TriggerAction:
     m_PersistentCalls:
+      m_Calls: []
+  InAreaAction:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1997507521}
         m_TargetAssemblyTypeName: Finished, Assembly-CSharp
@@ -1456,6 +1459,7 @@ MonoBehaviour:
   DeathAction:
     m_PersistentCalls:
       m_Calls: []
+  KeyCode: 0
   deathTimer: 0
 --- !u!1 &986416274
 GameObject:
