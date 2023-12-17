@@ -14,6 +14,9 @@ public class IceCube : MonoBehaviour
     [SerializeField]
     Sprite CubeFullyDamaged;
 
+    [SerializeField]
+    ParticleSystem ParticleSystem;
+
     Sprite DamageState = null;
     SpriteRenderer SpriteRenderer;
 
@@ -28,6 +31,7 @@ public class IceCube : MonoBehaviour
 
     public void OnFail()
     {
+        ParticleSystem?.Play();
         SplittedIceCube.SetActive(true);
         SplittedIceCube.transform.position = transform.position + new Vector3(-transform.localScale.x / 2, transform.localScale.y / 2, 0);
         gameObject.SetActive(false);
@@ -36,7 +40,8 @@ public class IceCube : MonoBehaviour
 
     public void OnGetDamage()
     {
-        if(DamageState == null)
+        ParticleSystem?.Play();
+        if (DamageState == null)
         {
             SpriteRenderer.sprite = CubeHalfDamaged;
             DamageState = CubeHalfDamaged;

@@ -30,6 +30,7 @@ public class Triggerable : MonoBehaviour
 
         Step++;
         IceCube.transform.SetParent(cubeParent.transform, true);
+        IceCube.transform.localPosition = Vector3.zero;
         Animator.SetTrigger("success" + i.ToString());
 
         if(Step != MaxStep)
