@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class TriggerArea : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class TriggerArea : MonoBehaviour
 
     [SerializeField]
     UnityEvent DeathAction;
+
+    [SerializeField]
+    Text TxtKey;
 
     [SerializeField]
     KeyCode KeyCode;

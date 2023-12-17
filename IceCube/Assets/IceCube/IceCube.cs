@@ -57,7 +57,7 @@ public class IceCube : MonoBehaviour
 
         if(DamageState == CubeFullyDamaged)
         {
-            FindObjectOfType<MinigameManager>().ShowLost();
+            OnFail();
             return;
         }
         

@@ -2645,7 +2645,7 @@ MonoBehaviour:
   SplittedIceCube: {fileID: 880721076}
   CubeHalfDamaged: {fileID: 21300000, guid: 334454edc65ab5a499363e2be0060838, type: 3}
   CubeFullyDamaged: {fileID: 21300000, guid: 2f54a58c5b3888a43953e0b11bd50dc7, type: 3}
-  ParticleSystem: {fileID: 0}
+  ParticleSystem: {fileID: 1730425161}
   Rigidbody: {fileID: 1634883755}
 --- !u!50 &1634883755
 Rigidbody2D:

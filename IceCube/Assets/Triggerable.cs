@@ -9,7 +9,7 @@ public class Triggerable : MonoBehaviour
     GameObject cubeParent;
 
     [SerializeField]
-    Text TxtKey;
+    List<Text> TxtKeys;
 
     [SerializeField]
     int MaxStep = 1;
@@ -35,7 +35,7 @@ public class Triggerable : MonoBehaviour
 
         if(Step != MaxStep)
         {
-            TxtKey.color = Color.white;
+            TxtKeys[i].color = Color.white;
         }
     }
 
@@ -43,13 +43,13 @@ public class Triggerable : MonoBehaviour
     {
         if (i != Step || Step >= MaxStep) return;
 
-        TxtKey.color = Color.green;
+        TxtKeys[i].color = Color.green;
     }
     public void OnCubeOutOfArea(int i)
     {
         if (i != Step || Step >= MaxStep) return;
 
-        TxtKey.color = Color.white;
+        TxtKeys[i].color = Color.white;
     }
 
     public void OnCubeFailed(int i)
@@ -57,7 +57,7 @@ public class Triggerable : MonoBehaviour
         if (i != Step || Step >= MaxStep) return;
 
         Step = MaxStep + 1;
-        TxtKey.color = Color.red;
+        TxtKeys[i].color = Color.red;
         IceCube.transform.SetParent(cubeParent.transform, true);
         Animator.SetTrigger("fail" + i.ToString());
     }

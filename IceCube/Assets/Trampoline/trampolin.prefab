@@ -67,7 +67,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.54}
   m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5524867440456320039
@@ -256,7 +256,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeParent: {fileID: 347531384470914489}
-  TxtKey: {fileID: 8208677804082175239}
+  TxtKeys:
+  - {fileID: 8208677804082175239}
   MaxStep: 1
 --- !u!1 &3215665705324312385
 GameObject:
@@ -378,6 +379,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OutAreaAction:
+    m_PersistentCalls:
+      m_Calls: []
   DeathAction:
     m_PersistentCalls:
       m_Calls:
@@ -393,6 +397,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  TxtKey: {fileID: 0}
   KeyCode: 32
   deathTimer: 2
 --- !u!1 &5025263671033849473
@@ -430,7 +435,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000015259, y: -107}
-  m_SizeDelta: {x: 362.68, y: 72.539}
+  m_SizeDelta: {x: 960.9, y: 272.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2750976679779046685
 CanvasRenderer:
@@ -462,11 +467,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 60
-    m_FontStyle: 0
+    m_FontSize: 200
+    m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 5
-    m_MaxSize: 60
+    m_MinSize: 2
+    m_MaxSize: 200
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
