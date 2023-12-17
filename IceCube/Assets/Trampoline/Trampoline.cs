@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Trampoline : TriggerableBase
+public class Trampoline : MonoBehaviour
 {
     [SerializeField]
     KeyCode KeyCode;

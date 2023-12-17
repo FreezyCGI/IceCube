@@ -9,7 +9,7 @@ public class SequenzChanger : MonoBehaviour
     TMP_Text sequenzText;
 
     [SerializeField]
-    TriggerableBase FirstBuilding;
+    TriggerArea FirstTrigger;
 
     [SerializeField]
     GameObject StartSequenzPanel;
@@ -22,6 +22,6 @@ public class SequenzChanger : MonoBehaviour
     public void StartMinigame()
     {
         ChangeText("GO!");
-        //FirstBuilding.OnStart();
+        FirstTrigger.enabled = true;
     }
 }
